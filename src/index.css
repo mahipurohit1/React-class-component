@@ -26,3 +26,11 @@ button:active {
   background-color: #630032;
   border-color: #630032;
 }
+
+.error {
+  font-size: 20px;
+  padding: 20px 30px;
+  background-color: whitesmoke;
+  color: crimson;
+  font-weight: bold;
+}
