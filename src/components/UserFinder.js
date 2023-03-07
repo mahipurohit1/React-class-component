@@ -1,13 +1,11 @@
 import { Component } from "react";
+import UserContext from "../store/userContext";
+
 import classes from "./UserFinder.module.css";
 import Users from "./Users";
-const DUMMY_USERS = [
-  { id: "u1", name: "Max" },
-  { id: "u2", name: "Manuel" },
-  { id: "u3", name: "Julie" },
-];
 
 class UserFinder extends Component {
+  static contextType = UserContext;
   constructor() {
     super();
     this.state = {
@@ -19,8 +17,9 @@ class UserFinder extends Component {
   componentDidMount() {
     // http request to fetch data
     console.log("data fetch successfully");
-    this.setState({ users: DUMMY_USERS });
-    this.setState({ filteredUsers: DUMMY_USERS });
+    console.log(this.context);
+    this.setState({ users: this.context.users });
+    this.setState({ filteredUsers: this.context.users });
   }
 
   componentDidUpdate(prevProps, prevState) {
